@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ausbildung Bewerbungsportal 2027</title>
+
+    <!-- Verbindung zur CSS-Datei -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- JavaScript laden -->
+    <script src="script.js" defer></script>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <h1>Ausbildung Bewerbungsportal</h1>
+            <p>Dein persönlicher Bewerbungsassistent für 2027</p>
+        </div>
+    </header>
+
+    <main class="container">
+
+        <section class="intro">
+            <h2>Dein Bewerbungsprofil</h2>
+            <p>
+                Beantworte die folgenden Fragen, um dein Bewerbungsprofil
+                für eine Ausbildung in Deutschland vorzubereiten.
+            </p>
+
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+
+            <p id="progress-text">Abschnitt 1 von 4</p>
+        </section>
+
+        <form id="application-form">
+
+            <!-- Abschnitt 1: Persönliche Informationen -->
+            <section class="form-section active">
+
+                <h2>1. Persönliche Informationen</h2>
+
+                <label for="first-name">Vorname</label>
+                <input
+                    type="text"
+                    id="first-name"
+                    name="firstName"
+                    required
+                >
+
+                <label for="last-name">Nachname</label>
+                <input
+                    type="text"
+                    id="last-name"
+                    name="lastName"
+                    required
+                >
+
+                <label for="birth-date">Geburtsdatum</label>
+                <input
+                    type="date"
+                    id="birth-date"
+                    name="birthDate"
+                    required
+                >
+
+                <label for="nationality">Staatsangehörigkeit</label>
+                <input
+                    type="text"
+                    id="nationality"
+                    name="nationality"
+                    required
+                >
+
+                <label for="email">E-Mail-Adresse</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+
+                <label for="country">Aktuelles Wohnland</label>
+                <input
+                    type="text"
+                    id="country"
+                    name="country"
+                    required
+                >
+
+            </section>
+
+            <!-- Abschnitt 2: Schulbildung -->
+            <section class="form-section">
+
+                <h2>2. Schulbildung</h2>
+
+                <label for="school-degree">Schulabschluss</label>
+                <select id="school-degree" name="schoolDegree" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="Baccalaureat informatique">
+                        Baccalauréat Informatique
+                    </option>
+                    <option value="Andere">
+                        Anderer Schulabschluss
+                    </option>
+                </select>
+
+                <label for="graduation-year">Abschlussjahr</label>
+                <input
+                    type="number"
+                    id="graduation-year"
+                    name="graduationYear"
+                    min="2000"
+                    max="2035"
+                    required
+                >
+
+                <label for="grade">Abschlussnote</label>
+                <input
+                    type="number"
+                    id="grade"
+                    name="grade"
+                    min="0"
+                    max="20"
+                    step="0.01"
+                    required
+                >
+
+                <label for="school-country">Land des Schulabschlusses</label>
+                <input
+                    type="text"
+                    id="school-country"
+                    name="schoolCountry"
+                    required
+                >
+
+            </section>
+
+            <!-- Abschnitt 3: Ausbildung -->
+            <section class="form-section">
+
+                <h2>3. Deine Wunschausbildung</h2>
+
+                <label for="profession">Gewünschter Ausbildungsberuf</label>
+                <select id="profession" name="profession" required>
+                    <option value="">Bitte auswählen</option>
+
+                    <option value="Fachinformatiker Anwendungsentwicklung">
+                        Fachinformatiker/in für Anwendungsentwicklung
+                    </option>
+
+                    <option value="Fachinformatiker Systemintegration">
+                        Fachinformatiker/in für Systemintegration
+                    </option>
+
+                    <option value="IT-System-Elektroniker">
+                        IT-System-Elektroniker/in
+                    </option>
+
+                    <option value="Andere IT-Ausbildung">
+                        Andere IT-Ausbildung
+                    </option>
+                </select>
+
+                <label for="start-year">Gewünschtes Startjahr</label>
+                <select id="start-year" name="startYear" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="2027">2027</option>
+                    <option value="2028">2028</option>
+                </select>
+
+                <label for="start-month">Bevorzugter Startmonat</label>
+                <select id="start-month" name="startMonth" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="April">April</option>
+                    <option value="August">August</option>
+                    <option value="September">September</option>
+                    <option value="Flexibel">Flexibel</option>
+                </select>
+
+                <label for="city">Bevorzugte Stadt oder Region</label>
+                <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="z. B. Hamburg, Neckarsulm oder flexibel"
+                    required
+                >
+
+            </section>
+
+            <!-- Abschnitt 4: Sprache und Vorbereitung -->
+            <section class="form-section">
+
+                <h2>4. Sprache und Vorbereitung</h2>
+
+                <label for="german-level">Aktuelles Deutschniveau</label>
+                <select id="german-level" name="germanLevel" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="A2">A2</option>
+                    <option value="B1">B1</option>
+                    <option value="B2">B2</option>
+                    <option value="C1">C1</option>
+                </select>
+
+                <label for="certificate">Sprachzertifikat</label>
+                <select id="certificate" name="certificate" required>
+                    <option value="">Bitte auswählen</option>
+                    <option value="Ja">Ja, ich habe ein Zertifikat.</option>
+                    <option value="Nein">Nein, noch nicht.</option>
+                    <option value="In Vorbereitung">
+                        Ich bereite mich auf die Prüfung vor.
+                    </option>
+                </select>
+
+                <label for="skills">IT-Kenntnisse</label>
+                <textarea
+                    id="skills"
+                    name="skills"
+                    rows="4"
+                    placeholder="z. B. HTML, CSS, JavaScript, PHP, SQL, Python"
+                    required
+                ></textarea>
+
+                <label for="motivation">Warum möchtest du diese Ausbildung machen?</label>
+                <textarea
+                    id="motivation"
+                    name="motivation"
+                    rows="5"
+                    placeholder="Beschreibe deine Motivation ..."
+                    required
+                ></textarea>
+
+            </section>
+
+            <!-- Navigation -->
+            <div class="navigation">
+
+                <button
+                    type="button"
+                    id="previous-button"
+                    class="secondary-button"
+                >
+                    Zurück
+                </button>
+
+                <button
+                    type="button"
+                    id="next-button"
+                    class="primary-button"
+                >
+                    Weiter
+                </button>
+
+                <button
+                    type="submit"
+                    id="submit-button"
+                    class="primary-button hidden"
+                >
+                    Profil erstellen
+                </button>
+
+            </div>
+
+        </form>
+
+        <!-- Ergebnis -->
+        <section id="result" class="result hidden">
+
+            <h2>Dein Bewerbungsprofil</h2>
+
+            <p>
+                Überprüfe deine Angaben. Dieses Profil ist eine Vorbereitung
+                für deine Bewerbung und keine offizielle Bewerbung.
+            </p>
+
+            <pre id="summary"></pre>
+
+            <div class="result-actions">
+
+                <button
+                    type="button"
+                    id="copy-button"
+                    class="primary-button"
+                >
+                    Zusammenfassung kopieren
+                </button>
+
+                <button
+                    type="button"
+                    id="download-button"
+                    class="secondary-button"
+                >
+                    Als TXT herunterladen
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <p>Ausbildung Bewerbungsportal 2027 · Persönliche Vorbereitung</p>
+    </footer>
+
+</body>
+</html>

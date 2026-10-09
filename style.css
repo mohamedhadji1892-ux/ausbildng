@@ -1,0 +1,336 @@
+/* =========================
+   1. Allgemeine Einstellungen
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --background: #f1f5f9;
+    --surface: #ffffff;
+    --text: #1e293b;
+    --muted: #64748b;
+    --border: #dbe3ef;
+    --success: #16a34a;
+    --shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* =========================
+   2. Kopfbereich
+========================= */
+
+.header {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb, #0f172a);
+    color: white;
+    padding: 45px 20px;
+    text-align: center;
+}
+
+.header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+    margin-bottom: 10px;
+}
+
+.header p {
+    color: #dbeafe;
+    font-size: 1.05rem;
+}
+
+/* =========================
+   3. Hauptcontainer
+========================= */
+
+.container {
+    width: min(100% - 32px, 850px);
+    margin: 0 auto;
+}
+
+main.container {
+    padding-top: 35px;
+    padding-bottom: 45px;
+}
+
+.intro {
+    margin-bottom: 25px;
+}
+
+.intro h2 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.intro p {
+    color: var(--muted);
+}
+
+/* =========================
+   4. Fortschrittsanzeige
+========================= */
+
+.progress-container {
+    width: 100%;
+    height: 10px;
+    background: #dbeafe;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-top: 22px;
+}
+
+#progress-bar {
+    width: 25%;
+    height: 100%;
+    background: linear-gradient(90deg, #2563eb, #60a5fa);
+    border-radius: 20px;
+    transition: width 0.3s ease;
+}
+
+#progress-text {
+    font-size: 0.9rem;
+    margin-top: 8px;
+}
+
+/* =========================
+   5. Formular
+========================= */
+
+#application-form {
+    background: var(--surface);
+    padding: 35px;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.form-section {
+    display: none;
+    animation: fadeIn 0.3s ease;
+}
+
+.form-section.active {
+    display: block;
+}
+
+.form-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid var(--border);
+}
+
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+input,
+select,
+textarea {
+    display: block;
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    background: #ffffff;
+    color: var(--text);
+    font: inherit;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.13);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 110px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+/* =========================
+   6. Navigationsbuttons
+========================= */
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    margin-top: 30px;
+}
+
+button {
+    font: inherit;
+    font-weight: 600;
+    border: none;
+    border-radius: 9px;
+    padding: 13px 22px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 3px;
+}
+
+.primary-button {
+    background: var(--primary);
+    color: white;
+}
+
+.primary-button:hover {
+    background: var(--primary-dark);
+}
+
+.secondary-button {
+    background: #e2e8f0;
+    color: var(--text);
+}
+
+.secondary-button:hover {
+    background: #cbd5e1;
+}
+
+button:disabled {
+    opacity: 0.45;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* =========================
+   7. Ergebnisbereich
+========================= */
+
+.result {
+    margin-top: 30px;
+    padding: 30px;
+    border-radius: 18px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+.result h2 {
+    margin-bottom: 12px;
+}
+
+.result > p {
+    color: var(--muted);
+    margin-bottom: 20px;
+}
+
+#summary {
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+    font-family: Consolas, "Courier New", monospace;
+    background: #f8fafc;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    line-height: 1.8;
+}
+
+.result-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+/* =========================
+   8. Fussbereich
+========================= */
+
+footer {
+    text-align: center;
+    padding: 25px 15px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* =========================
+   9. Animation
+========================= */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================
+   10. Smartphone-Design
+========================= */
+
+@media (max-width: 600px) {
+    .header {
+        padding: 32px 16px;
+    }
+
+    main.container {
+        padding-top: 25px;
+    }
+
+    #application-form {
+        padding: 22px 18px;
+    }
+
+    .form-section h2 {
+        font-size: 1.25rem;
+    }
+
+    .navigation {
+        flex-wrap: wrap;
+    }
+
+    .navigation button {
+        flex: 1;
+        padding: 12px 14px;
+    }
+
+    .result {
+        padding: 20px 16px;
+    }
+
+    .result-actions {
+        flex-direction: column;
+    }
+
+    .result-actions button {
+        width: 100%;
+    }
+}
